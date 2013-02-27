@@ -1,0 +1,517 @@
+/*!
+ * Twitter-UI
+ *
+ * MIT licensed
+ * Copyright (C) 2013 Tim Holman, http://tholman.com
+ */
+
+/*********************************************
+ * 0. Shared Styles
+ *********************************************/
+
+html, body {
+	padding: 0px;
+	margin: 0px;
+}
+
+section {
+	position: relative;
+	height: 400px;
+	width: 100%;
+}
+
+header, footer {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	background-color: #4099FF;
+	text-align: center;
+	font-size: 16px;
+	padding: 15px;
+	color: #fff;
+}
+
+header {
+	padding-right: 90px;
+	padding-left: 90px;
+	line-height: 1.4em;
+}
+
+footer .sharing{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.fb-like, .twitter-share-button {
+	margin-left: 3px;
+}
+
+.twitter-share-button {
+	margin-bottom: -3px;
+}
+
+a {
+	text-decoration: underline;
+	color: #fff;
+}
+
+a:hover {
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+/* Effect Related */
+
+.hole {
+
+	-webkit-transition: background 300ms ease-in-out;
+	   -moz-transition: background 300ms ease-in-out;
+	    -ms-transition: background 300ms ease-in-out;
+	     -o-transition: background 300ms ease-in-out;
+			transition: background 300ms ease-in-out;
+
+	/* Font smoothing + HW acceleration for webkit */
+	-webkit-font-smoothing: antialiased;
+	-webkit-transform: translateZ(0px);
+
+	/* Centering */
+	margin-left: -100px;
+  	position: absolute;
+	margin-top: -25px;
+  	left: 50%;
+  	top: 50%;
+
+	width: 200px;
+	height: 50px;
+}
+
+.twitter-follow-button {
+	margin-left: -77px;
+	position: absolute;
+	margin-top: -14px;
+	left: 50%;
+	top: 50%;
+}
+
+.door {
+
+	-webkit-transition-timing-function: ease-in-out;
+	   -moz-transition-timing-function: ease-in-out;
+		-ms-transition-timing-function: ease-in-out;
+		 -o-transition-timing-function: ease-in-out;
+		    transition-timing-function: ease-in-out;
+
+	position: absolute;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.door:before {
+	font-family: 'tweet', sans-serif;
+	position: absolute;
+	content: "\e000";
+	font-size: 35px;
+	display: block;
+	height: 20px;
+	width: 0px;
+}
+
+@font-face {
+	font-family: 'tweet';
+  	src: url('https://s3.amazonaws.com/tholman.com/fonts/tweet.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*********************************************
+ * 1. Top/Bottom Doors
+ *********************************************/
+
+.top-doors {
+
+}
+
+/* Stationary CSS */
+.top-doors .hole {
+
+	box-shadow: inset -7px 0px 12px -8px rgba(0,0,0,0.3),
+	            inset 7px 0px 12px -8px rgba(0,0,0,0.3);
+
+	background: rgba(0,0,0,0.3);
+}
+
+.top-doors .door {
+
+	-webkit-transition: top 400ms, box-shadow 200ms, -webkit-transform 300ms;
+	   -moz-transition: top 400ms, box-shadow 200ms, -moz-transform 300ms;
+		-ms-transition: top 400ms, box-shadow 200ms, -ms-transform 300ms;
+		 -o-transition: top 400ms, box-shadow 200ms, -o-transform 300ms;
+			transition: top 400ms, box-shadow 200ms, transform 300ms;
+
+	background-color: #fff;
+	width: 100%;
+	height: 50%;
+}
+
+.top-doors .door:before {
+	margin-left: -20px;
+	color: #4099FF; 
+	left: 52%;
+}
+
+.top-doors .top {
+	left: 0px;
+	top: 0%;
+}
+
+.top-doors .top:before {
+    top: 5px;
+}
+
+.top-doors .bottom {
+	top: 50%;
+	left: 0px;
+}
+
+.top-doors .bottom:before {
+	top: -20px;
+}
+
+/* Effects on Hover */
+
+.top-doors .hole:hover {
+	background: #fff;
+}
+
+.top-doors .hole:hover .door {
+	box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.4);
+    
+    -webkit-transform: scale(1.08);
+       -moz-transform: scale(1.08);
+		-ms-transform: scale(1.08);
+		 -o-transform: scale(1.08);
+			transform: scale(1.08);
+}
+
+.top-doors .hole:hover .top {
+	top: -50%;
+}
+
+.top-doors .hole:hover .bottom {
+	top: 100%;
+}
+
+/*********************************************
+ * 2. Sliding Door
+ *********************************************/
+
+.sliding-door {
+	background-color: #4099FF;
+}
+
+/* Stationary CSS */
+.sliding-door .hole {
+
+	box-shadow: inset 0px 0px 12px -1px rgba(0,0,0,0.1);
+
+	background: rgba(0,0,0,0.5);
+	overflow: hidden;
+}
+
+.sliding-door .door {
+
+	-webkit-transition: left 350ms;
+	   -moz-transition: left 350ms;
+		-ms-transition: left 350ms;
+		 -o-transition: left 350ms;
+			transition: left 350ms;
+
+	background-color: #4099FF;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+.sliding-door .door:before {
+	margin-left: -20px;
+	color: #fff; 
+	left: 52%;
+	top: 10px;
+}
+
+/* Effects on Hover */
+
+.sliding-door .hole:hover {
+	background: inherit;
+}
+
+.sliding-door .hole:hover .door {
+	box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.2);
+ 	left: -105%;
+}
+
+/*********************************************
+ * 3. Left/Right Doors
+ *********************************************/
+
+.side-doors {
+	background-color: #fff;
+}
+
+/* Stationary CSS */
+.side-doors .hole {
+
+	box-shadow: inset 0px -7px 12px -8px rgba(0,0,0,0.3),
+	  			inset 0px 7px 12px -8px rgba(0,0,0,0.3);
+
+	background: rgba(0,0,0,0.3);
+}
+
+.side-doors .door {
+
+	-webkit-transition: left 400ms, box-shadow 200ms, -webkit-transform 300ms;
+	   -moz-transition: left 400ms, box-shadow 200ms, -moz-transform 300ms;
+		-ms-transition: left 400ms, box-shadow 200ms, -ms-transform 300ms;
+		 -o-transition: left 400ms, box-shadow 200ms, -o-transform 300ms;
+			transition: left 400ms, box-shadow 200ms, transform 300ms;
+
+	height: 100%;
+	width: 50%;
+	background-color: #fff;
+}
+
+.side-doors .door:before {
+	margin-left: -20px;
+	color: #4099FF; 
+}
+
+.side-doors .left {
+	left: 0%;
+	top: 0%;
+}
+
+.side-doors .left:before {
+    right: 17px;
+    top: 8px;
+}
+
+.side-doors .right {
+	left: 50%;
+	top: 0%;
+}
+
+.side-doors .right:before {
+	left: 4px;
+	top: 8px;
+}
+
+/* Effects on Hover */
+
+.side-doors .hole:hover {
+	background: #fff;
+}
+
+.side-doors .hole:hover .door {
+	box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.4);
+
+    -webkit-transform: scale(1.08);
+       -moz-transform: scale(1.08);
+		-ms-transform: scale(1.08);
+		 -o-transform: scale(1.08);
+			transform: scale(1.08);
+}
+
+.side-doors .hole:hover .left {
+	left: -50%;
+}
+
+.side-doors .hole:hover .right {
+	left: 100%;
+}
+
+/*********************************************
+ * 4. Long Bird
+ *********************************************/
+
+
+.long-bird {
+	background-color: #4099FF;
+}
+
+/* Stationary CSS */
+
+.long-bird .hole {
+	margin-left: -80px;
+	width: 160px;
+}
+
+.long-bird .door {
+
+	-webkit-transition: left 400ms;
+	   -moz-transition: left 400ms;
+		-ms-transition: left 400ms;
+		 -o-transition: left 400ms;
+			transition: left 400ms;
+
+	height: 100%;
+	width: 50%;
+	background-color: #4099FF;
+}
+
+.long-bird .door:before {
+	margin-left: -20px;
+	font-size: 46px;
+	color: #fff;
+	top: -5px;
+}
+
+.long-bird .left {
+	left: 0%;
+	top: 0%;
+}
+
+.long-bird .left:before {
+    right: 17px;
+}
+
+.long-bird .right {
+	left: 50%;
+	top: 0%;
+}
+
+.long-bird .right:before {
+	left: 4px;
+}
+
+/* Effects on Hover */
+
+.long-bird .hole:hover {
+}
+
+.long-bird .hole:hover .door {
+}
+
+.long-bird .hole:hover .left {
+	left: -46%;
+}
+
+.long-bird .hole:hover .right {
+	left: 96%;
+}
+
+/*********************************************
+ * 5. Opening Doors
+ *********************************************/
+
+.opening-doors {
+
+}
+
+/* Stationary CSS */
+.opening-doors .hole {
+
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		 -o-transform-style: preserve-3d;
+		    transform-style: preserve-3d;
+
+  	-webkit-perspective: 600px;
+  	   -moz-perspective: 600px;
+  		-ms-perspective: 600px;
+  		 -o-perspective: 600px;
+  			perspective: 600px;
+
+	box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.3);
+}
+
+.opening-doors .door {
+
+	-webkit-transition: box-shadow 800ms, -webkit-transform 500ms;
+	   -moz-transition: box-shadow 800ms, -moz-transform 500ms;
+		-ms-transition: box-shadow 800ms, -ms-transform 500ms;
+		 -o-transition: box-shadow 800ms, -o-transform 500ms;
+			transition: box-shadow 800ms, transform 500ms;
+
+	-webkit-transition-timing-function: linear;
+	   -moz-transition-timing-function: linear;
+		-ms-transition-timing-function: linear;
+		 -o-transition-timing-function: linear;
+		    transition-timing-function: linear;
+
+	background-color: #fff;
+	width: 100%;
+	height: 50%;
+}
+
+.opening-doors .door:before {
+	margin-left: -20px;
+	color: #4099FF; 
+	left: 52%;
+}
+
+.opening-doors .top {
+
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	-o-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+
+	left: 0px;
+	top: 0%;
+}
+
+.opening-doors .top:before {
+    top: 5px;
+}
+
+.opening-doors .bottom {
+
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	-o-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+
+	top: 50%;
+	left: 0px;
+}
+
+.opening-doors .bottom:before {
+	top: -20px;
+}
+
+/* Effects on Hover */
+
+.opening-doors .hole:hover {
+	background: #fff;
+}
+
+.opening-doors .hole:hover .door {
+	-webkit-transition: box-shadow 400ms, -webkit-transform 500ms;
+	   -moz-transition: box-shadow 400ms, -moz-transform 500ms;
+		-ms-transition: box-shadow 400ms, -ms-transform 500ms;
+		 -o-transition: box-shadow 400ms, -o-transform 500ms;
+			transition: box-shadow 400ms, transform 500ms;
+
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.2);
+}
+
+.opening-doors .hole:hover .top {
+
+	-webkit-transform: rotateX(145deg);
+	-moz-transform: rotateX(145deg);
+	-ms-transform: rotateX(145deg);
+	-o-transform: rotateX(145deg);
+	transform: rotateX(145deg);
+}
+
+.opening-doors .hole:hover .bottom {
+	
+	-webkit-transform: rotateX(-145deg);
+	-moz-transform: rotateX(-145deg);
+	-ms-transform: rotateX(-145deg);
+	-o-transform: rotateX(-145deg);
+	transform: rotateX(-145deg);
+}
