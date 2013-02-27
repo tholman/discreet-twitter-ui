@@ -48,6 +48,12 @@ footer .sharing{
 	margin-bottom: -3px;
 }
 
+.fb-like {
+	height: 21px !important;
+	overflow: hidden;	
+}
+
+
 a {
 	text-decoration: underline;
 	color: #fff;
