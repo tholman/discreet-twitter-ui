@@ -346,8 +346,8 @@ a:hover {
 /* Stationary CSS */
 
 .long-bird .hole {
-	margin-left: -80px;
-	width: 160px;
+	margin-left: -95px;
+	width: 190px;
 }
 
 .long-bird .door {
@@ -390,18 +390,12 @@ a:hover {
 
 /* Effects on Hover */
 
-.long-bird .hole:hover {
-}
-
-.long-bird .hole:hover .door {
-}
-
 .long-bird .hole:hover .left {
-	left: -46%;
+	left: -74px;
 }
 
 .long-bird .hole:hover .right {
-	left: 96%;
+	left: 170px;
 }
 
 /*********************************************
