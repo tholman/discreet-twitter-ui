@@ -446,8 +446,11 @@ a:hover {
 		    transition-timing-function: linear;
 
 	background-color: #fff;
-	width: 100%;
 	height: 50%;
+
+	/* Fixes tiny 3d glitch */
+	left: -1px !important;
+	width: 202px;
 }
 
 .opening-doors .door:before {
