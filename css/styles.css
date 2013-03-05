@@ -9,6 +9,17 @@
  * 0. Shared Styles
  *********************************************/
 
+ @font-face {
+	font-family: 'tweet';
+	src:url('../font/tweet.eot');
+	src:url('../font/tweet.eot?#iefix') format('embedded-opentype'),
+		url('../font/tweet.woff') format('woff'),
+		url('../font/tweet.ttf') format('truetype'),
+		url('../font/tweet.svg#tweet') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 html, body {
 	padding: 0px;
 	margin: 0px;
@@ -54,12 +65,12 @@ footer .sharing{
 }
 
 
-a {
+header a, footer a {
 	text-decoration: underline;
 	color: #fff;
 }
 
-a:hover {
+header a:hover, footer a:hover {
 	text-decoration: none;
 	opacity: 0.8;
 }
@@ -110,7 +121,7 @@ a:hover {
 	z-index: 2;
 }
 
-.door:before {
+.door:after {
 	font-family: 'tweet', sans-serif;
 	position: absolute;
 	content: "\e000";
@@ -118,13 +129,6 @@ a:hover {
 	display: block;
 	height: 20px;
 	width: 0px;
-}
-
-@font-face {
-	font-family: 'tweet';
-  	src: url('../font/twitter.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
 }
 
 /*********************************************
@@ -157,7 +161,7 @@ a:hover {
 	height: 50%;
 }
 
-.top-doors .door:before {
+.top-doors .door:after {
 	margin-left: -20px;
 	color: #4099FF; 
 	left: 52%;
@@ -168,7 +172,7 @@ a:hover {
 	top: 0%;
 }
 
-.top-doors .top:before {
+.top-doors .top:after {
     top: 5px;
 }
 
@@ -177,7 +181,7 @@ a:hover {
 	left: 0px;
 }
 
-.top-doors .bottom:before {
+.top-doors .bottom:after {
 	top: -20px;
 }
 
@@ -237,7 +241,7 @@ a:hover {
 	top: 0px;
 }
 
-.sliding-door .door:before {
+.sliding-door .door:after {
 	margin-left: -20px;
 	color: #fff; 
 	left: 52%;
@@ -285,7 +289,7 @@ a:hover {
 	background-color: #fff;
 }
 
-.side-doors .door:before {
+.side-doors .door:after {
 	margin-left: -20px;
 	color: #4099FF; 
 }
@@ -295,7 +299,7 @@ a:hover {
 	top: 0%;
 }
 
-.side-doors .left:before {
+.side-doors .left:after {
     right: 17px;
     top: 8px;
 }
@@ -305,7 +309,7 @@ a:hover {
 	top: 0%;
 }
 
-.side-doors .right:before {
+.side-doors .right:after {
 	left: 4px;
 	top: 8px;
 }
@@ -363,7 +367,7 @@ a:hover {
 	background-color: #4099FF;
 }
 
-.long-bird .door:before {
+.long-bird .door:after {
 	margin-left: -20px;
 	font-size: 46px;
 	color: #fff;
@@ -375,7 +379,7 @@ a:hover {
 	top: 0%;
 }
 
-.long-bird .left:before {
+.long-bird .left:after {
     right: 17px;
 }
 
@@ -384,7 +388,7 @@ a:hover {
 	top: 0%;
 }
 
-.long-bird .right:before {
+.long-bird .right:after {
 	left: 4px;
 }
 
@@ -447,7 +451,7 @@ a:hover {
 	width: 202px;
 }
 
-.opening-doors .door:before {
+.opening-doors .door:after {
 	margin-left: -20px;
 	color: #4099FF; 
 	left: 52%;
@@ -465,7 +469,7 @@ a:hover {
 	top: 0%;
 }
 
-.opening-doors .top:before {
+.opening-doors .top:after {
     top: 5px;
 }
 
@@ -481,7 +485,7 @@ a:hover {
 	left: 0px;
 }
 
-.opening-doors .bottom:before {
+.opening-doors .bottom:after {
 	top: -20px;
 }
 
