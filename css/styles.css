@@ -522,3 +522,157 @@ header a:hover, footer a:hover {
 	-o-transform: rotateX(-145deg);
 	transform: rotateX(-145deg);
 }
+
+/*********************************************
+ * 6. Rotating Door
+ *********************************************/
+
+.rotating-door {
+	background-color: #4099FF;
+}
+
+/* Stationary CSS */
+.rotating-door .hole {
+
+	box-shadow: inset 0px 0px 12px -1px rgba(0,0,0,0.1);
+
+	background: rgba(0,0,0,0.5);
+}
+
+.rotating-door .door {
+
+	-webkit-transition: box-shadow 400ms, -webkit-transform 500ms;
+	   -moz-transition: box-shadow 400ms, -moz-transform 500ms;
+		-ms-transition: box-shadow 400ms, -ms-transform 500ms;
+		 -o-transition: box-shadow 400ms, -o-transform 500ms;
+			transition: box-shadow 400ms, transform 500ms;
+
+	-webkit-transform-origin: 0 100% 0;
+	-moz-transform-origin: 0 100% 0;
+	-ms-transform-origin: 0 100% 0;
+	-o-transform-origin: 0 100% 0;
+	transform-origin: 0 100% 0;
+
+	background-color: #4099FF;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+.rotating-door .door:after {
+	margin-left: -20px;
+	color: #fff;
+	left: 52%;
+	top: 10px;
+}
+
+/* Effects on Hover */
+
+.rotating-door .hole:hover {
+	background: inherit;
+}
+
+.rotating-door .hole:hover .door {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+
+	box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.2);
+}
+
+/*********************************************
+ * 7. Rotate Left/Right Doors
+ *********************************************/
+
+.rotate-doors {
+	background-color: #fff;
+}
+
+/* Stationary CSS */
+.rotate-doors .hole {
+
+	box-shadow: inset 0px -7px 12px -8px rgba(0,0,0,0.3),
+	  			inset 0px 7px 12px -8px rgba(0,0,0,0.3);
+
+	background: rgba(0,0,0,0.3);
+}
+
+.rotate-doors .door {
+
+	-webkit-transition: left 400ms, box-shadow 200ms, -webkit-transform 300ms;
+	   -moz-transition: left 400ms, box-shadow 200ms, -moz-transform 300ms;
+		-ms-transition: left 400ms, box-shadow 200ms, -ms-transform 300ms;
+		 -o-transition: left 400ms, box-shadow 200ms, -o-transform 300ms;
+			transition: left 400ms, box-shadow 200ms, transform 300ms;
+
+	-webkit-transform-origin: 0 100% 0;
+	-moz-transform-origin: 0 100% 0;
+	-ms-transform-origin: 0 100% 0;
+	-o-transform-origin: 0 100% 0;
+	transform-origin: 0 100% 0;
+
+	height: 100%;
+	width: 50%;
+	background-color: #fff;
+}
+
+.rotate-doors .door:after {
+	margin-left: -20px;
+	color: #4099FF;
+}
+
+.rotate-doors .left {
+	left: 0%;
+	top: 0%;
+}
+
+.rotate-doors .left:after {
+    right: 17px;
+    top: 8px;
+}
+
+.rotate-doors .right {
+	-webkit-transform-origin: 100% 100% 0;
+	-moz-transform-origin: 100% 100% 0;
+	-ms-transform-origin: 100% 100% 0;
+	-o-transform-origin: 100% 100% 0;
+	transform-origin: 100% 100% 0;
+
+	left: 50%;
+	top: 0%;
+}
+
+.rotate-doors .right:after {
+	left: 4px;
+	top: 8px;
+}
+
+/* Effects on Hover */
+
+.rotate-doors .hole:hover {
+	background: #fff;
+}
+
+.rotate-doors .hole:hover .door {
+	box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.4);
+
+	-webkit-transform: rotate(-60deg);
+	-moz-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+}
+
+.rotate-doors .hole:hover .left {
+}
+
+.rotate-doors .hole:hover .right {
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+	transform: rotate(60deg);
+}
