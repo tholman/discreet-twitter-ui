@@ -102,7 +102,7 @@ header a:hover, footer a:hover {
 
 .twitter-follow-button {
 	margin-left: -77px;
-	position: absolute;
+	position: absolute !important; /* Override twitter api adding position: static inline */;
 	margin-top: -14px;
 	left: 50%;
 	top: 50%;
