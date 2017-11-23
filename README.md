@@ -1,8 +1,8 @@
 ## Discreen Twitter UI
-A minimal ui/ux concept for twitter buttons allowing hover/tap reveals under an icon.
+A minimal UI/UX concept for Twitter buttons allowing hover/tap reveals under an icon.
 
 ### Examples
-Example Gifs below, but you should really check out the real thing, [here](http://tholman.com/discreet-twitter-ui/).
+Example GIFs below, but you should really check out the real thing, [here](http://tholman.com/discreet-twitter-ui/).
 
 ##### Vertical doors
 ![Vertical Doors](http://i.imgur.com/YQGGO3j.gif)
